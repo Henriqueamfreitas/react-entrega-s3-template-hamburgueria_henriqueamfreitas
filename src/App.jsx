@@ -8,7 +8,13 @@ import { api } from '../src/Services/api.js'
 function App() {
   const [allProducts, setAllProducts] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [inputSearch, setInputSearch] = useState('')
 
+  const filteredProducts = allProducts.filter(
+    product => product.name.toUpperCase().includes(inputSearch.toUpperCase()) || 
+    product.category.toUpperCase().includes(inputSearch.toUpperCase())
+  )
+  
   useEffect(() => {
     setIsLoading(true)
     const getProducts = async () => {
@@ -26,10 +32,10 @@ function App() {
   return (
     <>
     <GlobalStyle></GlobalStyle>
-    <Header></Header>
+    <Header setInputSearch={setInputSearch}></Header>
     {
       !isLoading?
-      <ProductList allProducts={allProducts}></ProductList>
+      <ProductList allProducts={filteredProducts}></ProductList>
       : <p>Carregando...</p>
     }
     </>
