@@ -11,15 +11,25 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
     const removeProduct = () => {
         const newCartProducts = cartProducts.filter(product => product.id !== id)
         const excludeCartProducts = cartProducts.filter(product => product.id === id)
-        const array = [...newCartProducts, excludeCartProducts.pop()]
-        console.log(excludeCartProducts)
+        let array = [...newCartProducts]
+        // console.log(excludeCartProducts)
+        excludeCartProducts.shift()
+        // console.log(excludeCartProducts)
+        excludeCartProducts.forEach(excludeCartProduct => {
+            // console.log(excludeCartProduct)
+            array = [...array, excludeCartProduct]
+        })
+        // console.log(array)
         setCartProducts(newCartProducts)
+        setCartProducts(array)
+
         if(cartProducts.length === 0){
             setCartProducts([])
-        } else{
-        if((excludeCartProducts.length !== 1) && (excludeCartProducts.length >0) && (array.length>0)){
-            setCartProducts(array)
-        } }
+        } 
+        // else{
+        // if((excludeCartProducts.length !== 1) && (excludeCartProducts.length >0) && (array.length>0)){
+        //     setCartProducts(array)
+        // } }
     }
 
     return(
