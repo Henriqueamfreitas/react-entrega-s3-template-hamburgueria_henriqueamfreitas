@@ -3,20 +3,21 @@ import lupa from '../../Assets/lupa.png'
 import logo from '../../Assets/Logo.png'
 import { StyledHeader } from './style'
 import { useState } from 'react'
+import { CartModalList } from '../CartModalList'
 
 export const Header = ( { setInputSearch } ) => {
-    // console.log('Header')
     const handleSubmit = (event) => {
         event.preventDefault()
-        // console.log(inputSearch)
     }
+
+    const [isOpen, setIsOpen] = useState(false)
 
     return(
         <StyledHeader>
             <div>
                 <img src={logo} alt="" />
                 <div>
-                    <button>
+                    <button onClick={() => setIsOpen(true)}>
                         <img src={carrinho} alt="imagem de carrinho de compras" />
                     </button>
                     <span>Nº produtos no carrinho</span>
@@ -32,6 +33,7 @@ export const Header = ( { setInputSearch } ) => {
                     <img src={lupa} alt="imagem de lupa de pesquisar" />
                 </button>
             </form>
+            {isOpen? <CartModalList setIsOpen={setIsOpen}></CartModalList>:null}
         </StyledHeader>
     )
 }
