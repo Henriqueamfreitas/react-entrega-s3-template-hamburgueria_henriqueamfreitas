@@ -8,7 +8,12 @@ export const Header = () => {
         <header>
             <div>
                 <span>Burguer <span>Kenzie</span></span>
-                <img src={carrinho} alt="imagem de carrinho de compras" />
+                <div>
+                    <button>
+                        <img src={carrinho} alt="imagem de carrinho de compras" />
+                    </button>
+                    <span>Nº produtos no carrinho</span>
+                </div>
             </div>
             <form>
                 <input 
