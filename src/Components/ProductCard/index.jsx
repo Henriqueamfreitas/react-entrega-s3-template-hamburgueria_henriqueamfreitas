@@ -1,7 +1,26 @@
 import { StyledLi } from "./style";
 
-export const ProductCard = ( {img, name, category, price} ) => {
+export const ProductCard = ( {img, name, category, price, id, allProducts, setCartProducts, cartProducts} ) => {
     const formatedPrice = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+    const addProduct = () => {
+        const selectedProduct = (allProducts.filter(product => product.id === id))[0]
+        setCartProducts([...cartProducts,selectedProduct])
+    }
+
+    const removeProduct = () => {
+        const newCartProducts = cartProducts.filter(product => product.id !== id)
+        const excludeCartProducts = cartProducts.filter(product => product.id === id)
+        const array = [...newCartProducts, excludeCartProducts.pop()]
+        console.log(excludeCartProducts)
+        setCartProducts(newCartProducts)
+        if(cartProducts.length === 0){
+            setCartProducts([])
+        } else{
+        if((excludeCartProducts.length !== 1) && (excludeCartProducts.length >0) && (array.length>0)){
+            setCartProducts(array)
+        } }
+    }
 
     return(
         <StyledLi>
@@ -10,9 +29,9 @@ export const ProductCard = ( {img, name, category, price} ) => {
             <p>{category}</p>
             <p>{formatedPrice}</p>
             <div>
-                <button>-</button>
+                <button onClick={removeProduct}>-</button>
                 <span>Quantidade de vezes que o produto foi adicionado</span>
-                <button>+</button>
+                <button onClick={addProduct}>+</button>
             </div>
         </StyledLi>
     )   

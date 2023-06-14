@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { CartModalCard } from "../CartModalCard"
 
 
-export const CartModalList = ( {setIsOpen} ) => {
+export const CartModalList = ( {setIsOpen, allProducts} ) => {
     const modalRef = useRef(null)
     useEffect(() => {
         const handleOutClick = (event) => {
@@ -34,18 +34,20 @@ export const CartModalList = ( {setIsOpen} ) => {
     }, [])
 
     return(
-        <div ref={modalRef}>
-            <h1>oi</h1>
-            <button ref={buttonRef} onClick={() => setIsOpen(false)}>Fechar</button>
-        </div>
-        // <ul>
-        //     {
-        //         allProducts.map(product => {
-        //             return(
-        //                 <CartModalCard key={product.id} img={allProducts.img} name={product.name} category={product.category} price={product.price}></CartModalCard>
-        //             )
-        //         })
-        //     }
-        // </ul>
+        <section ref={modalRef}>
+            <div>
+                <h2>Carrinho de Compras</h2>
+                <button ref={buttonRef} onClick={() => setIsOpen(false)}>Fechar</button>
+            </div>
+            <ul>
+                {
+                    allProducts.map(product => {
+                        return(
+                            <CartModalCard key={product.id} img={allProducts.img} name={product.name}></CartModalCard>
+                        )
+                    })
+                }
+            </ul>
+        </section>
     )
 }

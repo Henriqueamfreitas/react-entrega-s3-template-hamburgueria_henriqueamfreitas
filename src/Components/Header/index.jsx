@@ -5,7 +5,7 @@ import { StyledHeader } from './style'
 import { useState } from 'react'
 import { CartModalList } from '../CartModalList'
 
-export const Header = ( { setInputSearch } ) => {
+export const Header = ( { setInputSearch, allProducts } ) => {
     const handleSubmit = (event) => {
         event.preventDefault()
     }
@@ -33,7 +33,7 @@ export const Header = ( { setInputSearch } ) => {
                     <img src={lupa} alt="imagem de lupa de pesquisar" />
                 </button>
             </form>
-            {isOpen? <CartModalList setIsOpen={setIsOpen}></CartModalList>:null}
+            {isOpen? <CartModalList allProducts={allProducts} setIsOpen={setIsOpen}></CartModalList>:null}
         </StyledHeader>
     )
 }

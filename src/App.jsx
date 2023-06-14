@@ -9,6 +9,9 @@ function App() {
   const [allProducts, setAllProducts] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [inputSearch, setInputSearch] = useState('')
+  const [cartProducts, setCartProducts] = useState([])
+  console.log(cartProducts)
+  // console.log(cartProducts[0])
 
   const filteredProducts = allProducts.filter(
     product => product.name.toUpperCase().includes(inputSearch.toUpperCase()) || 
@@ -32,10 +35,10 @@ function App() {
   return (
     <>
     <GlobalStyle></GlobalStyle>
-    <Header setInputSearch={setInputSearch}></Header>
+    <Header setInputSearch={setInputSearch} allProducts={cartProducts}></Header>
     {
       !isLoading?
-      <ProductList allProducts={filteredProducts}></ProductList>
+      <ProductList allProducts={filteredProducts} setCartProducts={setCartProducts} cartProducts={cartProducts}></ProductList>
       : <p>Carregando...</p>
     }
     </>
