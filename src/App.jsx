@@ -34,7 +34,7 @@ function App() {
   return (
     <>
     <GlobalStyle></GlobalStyle>
-    <Header setInputSearch={setInputSearch} allProducts={cartProducts}></Header>
+    <Header setInputSearch={setInputSearch} setCartProducts={setCartProducts} allProducts={allProducts} cartProducts={cartProducts}></Header>
     {
       !isLoading?
       <ProductList allProducts={filteredProducts} setCartProducts={setCartProducts} cartProducts={cartProducts}></ProductList>

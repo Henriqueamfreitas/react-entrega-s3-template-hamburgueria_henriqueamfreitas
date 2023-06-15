@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { CartModalCard } from "../CartModalCard"
 
 
-export const CartModalList = ( {setIsOpen, allProducts} ) => {
+export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
     const modalRef = useRef(null)
     useEffect(() => {
         const handleOutClick = (event) => {
@@ -33,8 +33,8 @@ export const CartModalList = ( {setIsOpen, allProducts} ) => {
         )
     }, [])
 
-    const novaArr = allProducts.filter(function(este, i) {
-        return allProducts.indexOf(este) === i;
+    const novaArr = cartProducts.filter(function(este, i) {
+        return cartProducts.indexOf(este) === i;
     });
 
     return(
@@ -47,7 +47,7 @@ export const CartModalList = ( {setIsOpen, allProducts} ) => {
                 {
                     novaArr.map(product => {
                         return(
-                            <CartModalCard id={product.id} allProducts={allProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
+                            <CartModalCard setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
                         )
                     })
                 }
