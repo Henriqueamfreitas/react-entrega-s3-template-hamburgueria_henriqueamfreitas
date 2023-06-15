@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import { CartModalCard } from "../CartModalCard"
+import { StyledCartModalList } from "./style"
 
 
 export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
@@ -47,7 +48,7 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
     const isTheCartEmpty = cartProducts.length === 0
   
     return(
-        <section ref={modalRef}>
+        <StyledCartModalList ref={modalRef}>
             <div>
                 <h2>Carrinho de Compras</h2>
                 <button ref={buttonRef} onClick={() => setIsOpen(false)}>Fechar</button>
@@ -71,6 +72,6 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
                 <p>{formatedTotalPrice}</p>
             </div>
             <button onClick={()=> {setCartProducts([])}}>Remover todos</button>
-        </section>
+        </StyledCartModalList>
     )
 }

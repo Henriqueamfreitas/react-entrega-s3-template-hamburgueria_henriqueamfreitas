@@ -1,8 +1,9 @@
 import { ProductCard } from '../ProductCard'
+import { StyledProductUl } from './style'
 
 export function ProductList( {allProducts, setCartProducts, cartProducts} ){
     return(
-        <ul>
+        <StyledProductUl>
             {
                 allProducts.map(product => {
                     return(
@@ -10,6 +11,6 @@ export function ProductList( {allProducts, setCartProducts, cartProducts} ){
                     )
                 })
             }
-        </ul>
+        </StyledProductUl>
     )
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { GlobalStyle } from "../../Styles/globalStyle"
 
 export const StyledLi = styled.li`
     border: grey solid 2px;

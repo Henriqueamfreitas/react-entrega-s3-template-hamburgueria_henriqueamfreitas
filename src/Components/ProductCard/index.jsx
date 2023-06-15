@@ -26,7 +26,9 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
     const filteredCartProducts = cartProducts.filter(product => product.id === id)
     return(
         <StyledLi>
-            <img src={img} alt="Imagem do produto em questão" />
+            <div>
+                <img src={img} alt="Imagem do produto em questão" />
+            </div>
             <h3>{name}</h3>
             <p>{category}</p>
             <p>{formatedPrice}</p>

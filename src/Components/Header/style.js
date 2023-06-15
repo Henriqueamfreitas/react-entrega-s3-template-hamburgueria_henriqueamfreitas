@@ -36,8 +36,6 @@ export const StyledHeader = styled.header`
         padding: 1.2813rem 0 1.2813rem;
         display: flex;
         justify-content: space-between;
-        /* padding-left: .625rem;
-        padding-right: .625rem; */
         input{
             margin-left: .9375rem;
             border: none;
