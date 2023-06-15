@@ -11,22 +11,23 @@ export const Header = ( { setInputSearch, cartProducts, allProducts, setCartProd
     }
 
     const [isOpen, setIsOpen] = useState(false)
+    const numberOfProducts = cartProducts.length
 
     return(
         <StyledHeader>
             <div>
-                <img src={logo} alt="" />
+                <img src={logo} alt="Logo do Burguer Kenzie (Burguer em icnza escuro e Kenzie em vermelho)" />
                 <div>
                     <button onClick={() => setIsOpen(true)}>
                         <img src={carrinho} alt="imagem de carrinho de compras" />
                     </button>
-                    <span>Nº produtos no carrinho</span>
+                    <span>{numberOfProducts}</span>
                 </div>
             </div>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text"
-                    placeholder=""
+                    placeholder="Digitar Pesquisa"
                     onChange={(event) => setInputSearch(event.target.value)} 
                 />
                 <button type='submit'>

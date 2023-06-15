@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const StyledLi = styled.li`
     border: grey solid 2px;
-    margin: 10px;
+    /* margin: 10px; */
+    width: fit-content;
     border-radius: 5px;
     background-color: lightblue;
 

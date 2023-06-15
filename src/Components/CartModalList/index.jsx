@@ -44,22 +44,28 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
       )
     const formatedTotalPrice = totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     
-
+    const isTheCartEmpty = cartProducts.length === 0
+  
     return(
         <section ref={modalRef}>
             <div>
                 <h2>Carrinho de Compras</h2>
                 <button ref={buttonRef} onClick={() => setIsOpen(false)}>Fechar</button>
             </div>
-            <ul>
-                {
-                    novaArr.map(product => {
-                        return(
-                            <CartModalCard price={product.price} setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
-                        )
-                    })
-                }
-            </ul>
+            {
+                isTheCartEmpty?
+                <p>O seu carrinho está vazio</p>
+                :
+                <ul>
+                    {
+                        novaArr.map(product => {
+                         return(
+                                <CartModalCard price={product.price} setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
+                            )
+                        })
+                    }
+                </ul>
+            }
             <div>
                 <p>Total</p>
                 <p>{formatedTotalPrice}</p>

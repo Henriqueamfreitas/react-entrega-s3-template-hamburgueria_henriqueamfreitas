@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 export const StyledLi = styled.li`
     border: grey solid 2px;
-    margin: 10px;
+    /* margin: 10px; */
     border-radius: 5px;
-
+    width: fit-content;
     img{
         margin-bottom: 1.6669rem;
     }
