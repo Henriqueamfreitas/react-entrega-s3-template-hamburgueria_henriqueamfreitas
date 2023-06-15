@@ -6,4 +6,11 @@ export const StyledProductUl = styled.ul`
     display: flex;
     gap: 1.25rem;
     overflow-x: scroll;
+
+    @media (min-width: 700px) {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        justify-content: space-between;
+        padding-right: 1rem;
+    }
 `
