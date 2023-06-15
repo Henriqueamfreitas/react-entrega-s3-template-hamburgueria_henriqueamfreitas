@@ -27,13 +27,17 @@ export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCar
 
     return(
         <StyledLi>
-            <img src={img} alt="Imagem do produto em questão" />
-            <h3>{name}</h3>
-            <p>{formatedPrice}</p>
             <div>
-                <button onClick={removeProduct}>-</button>
-                <span>{filteredCartProduct.length}</span>
+               <img src={img} alt="Imagem do produto em questão" />
+            </div>
+            <div>
+                <h3>{name}</h3>
+                <p>{formatedPrice}</p>
+            </div>
+            <div>
                 <button onClick={addProduct}>+</button>
+                <span>{filteredCartProduct.length}</span>
+                <button onClick={removeProduct}>-</button>
             </div>
         </StyledLi>
     )   

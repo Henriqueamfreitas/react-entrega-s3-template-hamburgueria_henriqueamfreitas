@@ -2,40 +2,50 @@ import styled from "styled-components"
 import { GlobalStyle } from "../../Styles/globalStyle"
 
 export const StyledLi = styled.li`
-    border: grey solid 2px;
-    /* margin: 10px; */
-    width: fit-content;
     border-radius: 5px;
-    background-color: lightblue;
+    background-color: var(--Color-white);
+    display: flex;
+    height: 6.6rem;
 
+    div:nth-child(1){
+        background-color: var(--grey-100);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5.1413rem;
+        height: 5rem;
+        border-radius: .3125rem;
+        margin-right: .625rem;
+    }
     img{
-        margin-bottom: 1.6669rem;
+        width: 3.4375rem;
+        height: 3.3431rem;
     }
 
     h3{
-        margin-bottom: 1rem;
-        margin-left: 1.3125rem;
-        margin-right: 1.1875rem;
+        margin-bottom: .5rem;
+        margin-top: -5px;
+        width: 100px;
     }
 
-    p{
-        margin-bottom: .875rem;
-        margin-left: 1.3125rem;
-        margin-right: 1.1875rem;
-    }
+    p{}
 
-    div{
-        margin-bottom: 1.4375rem;
-        margin-left: 1.3125rem;
-        margin-right: 1.1875rem;
+    div:nth-child(3){
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         span{
-            margin-left: .625rem;
-            margin-right: .625rem;
+            margin-top: .625rem;
+            margin-bottom: .625rem;
+        }
+        button{
+            background-color: transparent;
+            color: var(--Color-primary);
+            border: none;
         }
     }
-
-
     :hover{
-    border: green solid 2px;
     }
 `

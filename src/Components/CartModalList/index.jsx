@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { CartModalCard } from "../CartModalCard"
 import { StyledCartModalList } from "./style"
+import { StyledP } from "./style"
 
 
 export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
@@ -51,11 +52,11 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
         <StyledCartModalList ref={modalRef}>
             <div>
                 <h2>Carrinho de Compras</h2>
-                <button ref={buttonRef} onClick={() => setIsOpen(false)}>Fechar</button>
+                <button ref={buttonRef} onClick={() => setIsOpen(false)}>x</button>
             </div>
             {
                 isTheCartEmpty?
-                <p>O seu carrinho está vazio</p>
+                <StyledP>O seu carrinho está vazio</StyledP>
                 :
                 <ul>
                     {
