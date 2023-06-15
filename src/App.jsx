@@ -10,8 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [inputSearch, setInputSearch] = useState('')
   const [cartProducts, setCartProducts] = useState([])
-  console.log(cartProducts)
-  // console.log(cartProducts[0])
+  // console.log(cartProducts)
 
   const filteredProducts = allProducts.filter(
     product => product.name.toUpperCase().includes(inputSearch.toUpperCase()) || 

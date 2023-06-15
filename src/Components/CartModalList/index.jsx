@@ -33,6 +33,10 @@ export const CartModalList = ( {setIsOpen, allProducts} ) => {
         )
     }, [])
 
+    const novaArr = allProducts.filter(function(este, i) {
+        return allProducts.indexOf(este) === i;
+    });
+
     return(
         <section ref={modalRef}>
             <div>
@@ -41,9 +45,9 @@ export const CartModalList = ( {setIsOpen, allProducts} ) => {
             </div>
             <ul>
                 {
-                    allProducts.map(product => {
+                    novaArr.map(product => {
                         return(
-                            <CartModalCard key={product.id} img={allProducts.img} name={product.name}></CartModalCard>
+                            <CartModalCard id={product.id} allProducts={allProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
                         )
                     })
                 }

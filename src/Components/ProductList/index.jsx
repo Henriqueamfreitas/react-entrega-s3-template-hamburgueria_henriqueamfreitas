@@ -6,7 +6,7 @@ export function ProductList( {allProducts, setCartProducts, cartProducts} ){
             {
                 allProducts.map(product => {
                     return(
-                        <ProductCard cartProducts={cartProducts} allProducts={allProducts} id={product.id} setCartProducts={setCartProducts} key={product.id} img={allProducts.img} name={product.name} category={product.category} price={product.price}></ProductCard>
+                        <ProductCard cartProducts={cartProducts} allProducts={allProducts} id={product.id} setCartProducts={setCartProducts} key={product.id} img={product.img} name={product.name} category={product.category} price={product.price}></ProductCard>
                     )
                 })
             }

@@ -12,26 +12,18 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
         const newCartProducts = cartProducts.filter(product => product.id !== id)
         const excludeCartProducts = cartProducts.filter(product => product.id === id)
         let array = [...newCartProducts]
-        // console.log(excludeCartProducts)
         excludeCartProducts.shift()
-        // console.log(excludeCartProducts)
         excludeCartProducts.forEach(excludeCartProduct => {
-            // console.log(excludeCartProduct)
             array = [...array, excludeCartProduct]
         })
-        // console.log(array)
-        setCartProducts(newCartProducts)
         setCartProducts(array)
 
         if(cartProducts.length === 0){
             setCartProducts([])
         } 
-        // else{
-        // if((excludeCartProducts.length !== 1) && (excludeCartProducts.length >0) && (array.length>0)){
-        //     setCartProducts(array)
-        // } }
     }
 
+    const filteredCartProducts = cartProducts.filter(product => product.id === id)
     return(
         <StyledLi>
             <img src={img} alt="Imagem do produto em questão" />
@@ -40,7 +32,7 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
             <p>{formatedPrice}</p>
             <div>
                 <button onClick={removeProduct}>-</button>
-                <span>Quantidade de vezes que o produto foi adicionado</span>
+                <span>{filteredCartProducts.length}</span>
                 <button onClick={addProduct}>+</button>
             </div>
         </StyledLi>
