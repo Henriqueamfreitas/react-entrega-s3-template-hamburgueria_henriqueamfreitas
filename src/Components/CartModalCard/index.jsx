@@ -1,6 +1,6 @@
 import { StyledLi } from "./style"
 
-export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCartProducts} ) => {
+export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCartProducts, price} ) => {
     const addProduct = () => {
         const selectedProduct = (cartProducts.filter(product => product.id === id))[0]
         setCartProducts([...cartProducts,selectedProduct])
@@ -22,12 +22,14 @@ export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCar
     }
 
     const filteredCartProduct = cartProducts.filter(product => product.id === id)
+    const formatedPrice = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
 
     return(
         <StyledLi>
             <img src={img} alt="Imagem do produto em questão" />
             <h3>{name}</h3>
+            <p>{formatedPrice}</p>
             <div>
                 <button onClick={removeProduct}>-</button>
                 <span>{filteredCartProduct.length}</span>

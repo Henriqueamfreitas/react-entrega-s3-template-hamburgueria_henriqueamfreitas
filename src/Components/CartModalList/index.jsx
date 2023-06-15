@@ -37,6 +37,14 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
         return cartProducts.indexOf(este) === i;
     });
 
+    const totalPrice = cartProducts.reduce(
+        (previousValue, currentProduct) => {
+          return previousValue + currentProduct.price
+        }, 0
+      )
+    const formatedTotalPrice = totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    
+
     return(
         <section ref={modalRef}>
             <div>
@@ -47,14 +55,14 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
                 {
                     novaArr.map(product => {
                         return(
-                            <CartModalCard setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
+                            <CartModalCard price={product.price} setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
                         )
                     })
                 }
             </ul>
             <div>
                 <p>Total</p>
-                <p>Preço Total</p>
+                <p>{formatedTotalPrice}</p>
             </div>
             <button onClick={()=> {setCartProducts([])}}>Remover todos</button>
         </section>
