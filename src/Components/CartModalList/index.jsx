@@ -52,6 +52,11 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
                     })
                 }
             </ul>
+            <div>
+                <p>Total</p>
+                <p>Preço Total</p>
+            </div>
+            <button onClick={()=> {setCartProducts([])}}>Remover todos</button>
         </section>
     )
 }
