@@ -32,7 +32,7 @@ function App() {
   }, [])
   return (
     <>
-    <GlobalStyle></GlobalStyle>
+    <GlobalStyle />
     <Header setInputSearch={setInputSearch} setCartProducts={setCartProducts} allProducts={allProducts} cartProducts={cartProducts}></Header>
     {
       !isLoading?

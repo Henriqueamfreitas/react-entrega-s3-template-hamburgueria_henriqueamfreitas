@@ -16,7 +16,7 @@ export const Header = ( { setInputSearch, cartProducts, allProducts, setCartProd
     return(
         <StyledHeader>
             <div>
-                <img src={logo} alt="Logo do Burguer Kenzie (Burguer em icnza escuro e Kenzie em vermelho)" />
+                <img src={logo} alt="Logo do Burguer Kenzie (Burguer em cInza escuro e Kenzie em vermelho)" />
                 <div>
                     <button onClick={() => setIsOpen(true)}>
                         <img src={carrinho} alt="imagem de carrinho de compras" />
@@ -24,16 +24,6 @@ export const Header = ( { setInputSearch, cartProducts, allProducts, setCartProd
                     <span>{numberOfProducts}</span>
                 </div>
             </div>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text"
-                    placeholder="Digitar Pesquisa"
-                    onChange={(event) => setInputSearch(event.target.value)} 
-                />
-                <button type='submit'>
-                    <img src={lupa} alt="imagem de lupa de pesquisar" />
-                </button>
-            </form>
             {isOpen? <CartModalList setCartProducts={setCartProducts} cartProducts={cartProducts} setIsOpen={setIsOpen} allProducts={allProducts}></CartModalList>:null}
         </StyledHeader>
     )

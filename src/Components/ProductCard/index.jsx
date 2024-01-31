@@ -29,13 +29,15 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
             <div>
                 <img src={img} alt="Imagem do produto em questão" />
             </div>
-            <h3>{name}</h3>
-            <p>{category}</p>
-            <p>{formatedPrice}</p>
             <div>
-                <button onClick={removeProduct}>-</button>
-                <span>{filteredCartProducts.length}</span>
-                <button onClick={addProduct}>+</button>
+                <h3>{name}</h3>
+                <p>{category}</p>
+                <p>{formatedPrice}</p>
+                <div>
+                    <button onClick={removeProduct}>-</button>
+                    <span>{filteredCartProducts.length}</span>
+                    <button onClick={addProduct}>+</button>
+                </div>
             </div>
         </StyledLi>
     )   

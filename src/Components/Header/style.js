@@ -1,18 +1,17 @@
-import styled from "styled-components"
-import { GlobalStyle } from "../../Styles/globalStyle"
+import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
-    margin-bottom: 50px;
-    padding: 1.1425rem 1rem 1rem 1rem;
     background-color: var(--grey-0);
+    height: 4.75rem;
     div:nth-child(1) {
         display: flex;
-        margin-bottom: .875rem;
         justify-content: space-between;
+        align-items: center;
+        padding-left: 1.6875rem;
+        padding-right: 1.375rem;
+        height: 4.75rem;
     }
     div:nth-child(2) {
-        padding-top: .4375rem;
-        padding-right: .1875rem;
         button{
             background-color: transparent;
             border: none;
@@ -28,28 +27,17 @@ export const StyledHeader = styled.header`
             font-size: .875rem;
         }
     }
-    form{
-        width: 100%;
-        background-color: var(--Color-white);
-        border: 2px solid var(--grey-100);
-        border-radius: .5rem;
-        padding: 1.2813rem 0 1.2813rem;
-        display: flex;
-        justify-content: space-between;
-        input{
-            margin-left: .9375rem;
-            border: none;
-        }
-        input:focus{
-            border: none;
-        }
-        button{
-            margin-right: .625rem;
-            padding: .75rem 1.25rem;
-            border: none;
-            border-radius: .5rem;
-            background-color: var(--Color-primary);
-        }
+    @media (min-width: 43.75rem) {
+       div:nth-child(1) {
+            padding-left: 7.375rem;
+            padding-right: 7.675rem;
+            height: 4.75rem;
+       }
+       div:nth-child(2) {
+            span{
+                right: 7.375rem;
+            }
+       }
     }
 
 `

@@ -3,59 +3,48 @@ import { GlobalStyle } from "../../Styles/globalStyle"
 
 
 export const StyledLi = styled.li`
-    border: var(--grey-100) solid 2px;
-    border-radius: 5px;
-    height: 21.625rem;
-    width: 350px;
     display: flex;
     flex-direction: column;
-    background-color: var(--Color-white);
-    p:nth-child(1) {
-        color: var(--Color-primary);
-    }
-    p{
-        margin-bottom: .9375rem;
-        margin-left: 1.3125rem;
-        margin-right: 1.1875rem;
-    }
-
-    img{
-        width: 9.8125rem;
-        height: 9.8125rem;
-        margin-left: 3.75rem;
-        margin-right: 3.75rem;
-    }
+    width: 18.75rem;
+    height: 21.625rem;
+    border: solid .125rem var(--grey-100);
+    border-radius: .3125rem;
+    transition: .5s;
+    
     div:nth-child(1){
-        background-color: var(--grey-0);
         width: 100%;
+        height: 9.375rem;
+        display: flex;
+        justify-content: center;
+        background-color: var(--grey-0);
+    } 
+    div:nth-child(2){
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.6669rem;
-    }
-    h3{
-        margin-bottom: .9375rem;
-        margin-left: 1.3125rem;
-        margin-right: 1.1875rem;
-    }
-    div{
-        display: flex;
-        justify-content: center;
-        button{
-            background-color: transparent;
-            border: none;
+        height: 100%;
+        justify-content: space-evenly;
+        padding-left: 1rem;
+        background-color: var(--Color-white);
+        p:nth-child(3){
             color: var(--Color-primary);
         }
-        span{
-            margin-left: 1.25rem;
-            margin-right: 1.25rem;
+        div{
+            margin-right: 1rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: .6rem;
         }
     }
     :hover{
-        border: solid 2px var(--Color-primary);
+        border: solid .125rem var(--Color-primary);
+    }
+    button{
+        color: var(--Color-primary);
+        border: none;
+    }
+    
+    @media (min-width: 43.75rem) {
+        
     }
 `
