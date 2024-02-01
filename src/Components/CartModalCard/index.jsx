@@ -1,4 +1,4 @@
-import { StyledLi } from "./style"
+import { StyledLi } from './style'
 
 export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCartProducts, price} ) => {
     const addProduct = () => {
@@ -27,16 +27,16 @@ export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCar
 
     return(
         <StyledLi>
-            <div className="li__left">
-                <div className="li__left--divImg">
-                   <img src={img} alt="Imagem do produto em questão" />
+            <div className='li__left'>
+                <div className='li__left--divImg'>
+                   <img src={img} alt='Imagem do produto em questão' />
                 </div>
-                <div className="li__left--descripiton">
+                <div className='li__left--descripiton'>
                     <h3>{name}</h3>
                     <p>{formatedPrice}</p>
                 </div>
             </div>
-            <div className="li__right">
+            <div className='li__right'>
                 <button onClick={removeProduct}>-</button>
                 <span>{filteredCartProduct.length}</span>
                 <button onClick={addProduct}>+</button>

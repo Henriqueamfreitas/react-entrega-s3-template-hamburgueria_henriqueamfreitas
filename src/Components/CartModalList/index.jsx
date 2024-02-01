@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react"
-import { CartModalCard } from "../CartModalCard"
-import { StyledP, ModalOverlay } from "./style"
+import { useEffect, useRef } from 'react'
+import { CartModalCard } from '../CartModalCard'
+import { StyledP, ModalOverlay } from './style'
 
 
 export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {

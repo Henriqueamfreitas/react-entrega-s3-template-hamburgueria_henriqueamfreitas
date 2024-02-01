@@ -1,5 +1,4 @@
-import styled from "styled-components"
-import { GlobalStyle } from "../../Styles/globalStyle"
+import styled from 'styled-components'
 
 export const StyledP = styled.p`
     margin-left: 1rem;

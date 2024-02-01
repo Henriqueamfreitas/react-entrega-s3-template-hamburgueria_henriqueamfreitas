@@ -1,5 +1,4 @@
 import carrinho from '../../Assets/carrinho.png'
-import lupa from '../../Assets/lupa.png'
 import logo from '../../Assets/Logo.png'
 import { StyledHeader } from './style'
 import { useState } from 'react'
@@ -16,10 +15,10 @@ export const Header = ( { setInputSearch, cartProducts, allProducts, setCartProd
     return(
         <StyledHeader>
             <div className='header__div'>
-                <img src={logo} alt="Logo do Burguer Kenzie (Burguer em cInza escuro e Kenzie em vermelho)" />
+                <img src={logo} alt='Logo do Burguer Kenzie (Burguer em cInza escuro e Kenzie em vermelho)' />
                 <div className='header__div--div'>
                     <button onClick={() => setIsOpen(true)}>
-                        <img src={carrinho} alt="imagem de carrinho de compras" />
+                        <img src={carrinho} alt='imagem de carrinho de compras' />
                     </button>
                     <span>{numberOfProducts}</span>
                 </div>

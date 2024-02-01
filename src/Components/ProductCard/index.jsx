@@ -1,4 +1,4 @@
-import { StyledLi } from "./style";
+import { StyledLi } from './style';
 
 export const ProductCard = ( {img, name, category, price, id, allProducts, setCartProducts, cartProducts} ) => {
     const formatedPrice = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
@@ -27,7 +27,7 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
     return(
         <StyledLi>
             <div>
-                <img src={img} alt="Imagem do produto em questão" />
+                <img src={img} alt='Imagem do produto em questão' />
             </div>
             <div>
                 <h3>{name}</h3>
