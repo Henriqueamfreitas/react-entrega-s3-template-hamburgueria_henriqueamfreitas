@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react"
 import { CartModalCard } from "../CartModalCard"
-import { StyledCartModalList } from "./style"
-import { StyledP } from "./style"
+import { StyledP, ModalOverlay } from "./style"
 
 
 export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
@@ -49,30 +48,36 @@ export const CartModalList = ( {setIsOpen, cartProducts, setCartProducts} ) => {
     const isTheCartEmpty = cartProducts.length === 0
   
     return(
-        <StyledCartModalList ref={modalRef}>
-            <div>
-                <h2>Carrinho de Compras</h2>
-                <button ref={buttonRef} onClick={() => setIsOpen(false)}>x</button>
-            </div>
-            {
-                isTheCartEmpty?
-                <StyledP>O seu carrinho está vazio</StyledP>
-                :
-                <ul>
+        <ModalOverlay role='dialog'>
+            <div className='modal' ref={modalRef}>
+                <div className='modal__header'>
+                    <h2>Carrinho de Compras</h2>
+                    <button ref={buttonRef} onClick={() => setIsOpen(false)}>x</button>
+                </div>
+                <div className='modal__items'>
                     {
-                        novaArr.map(product => {
-                         return(
-                                <CartModalCard price={product.price} setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
-                            )
-                        })
+                        isTheCartEmpty?
+                        <StyledP>O seu carrinho está vazio</StyledP>
+                        :
+                        <ul>
+                            {
+                                novaArr.map(product => {
+                                 return(
+                                        <CartModalCard price={product.price} setCartProducts={setCartProducts} id={product.id} cartProducts={cartProducts} key={product.id} img={product.img} name={product.name}></CartModalCard>
+                                    )
+                                })
+                            }
+                        </ul>
                     }
-                </ul>
-            }
-            <div>
-                <p>Total</p>
-                <p>{formatedTotalPrice}</p>
+                </div>
+                <div className='modal__total'>
+                    <p>Total</p>
+                    <p>{formatedTotalPrice}</p>
+                </div>
+                <div className='modal__button'>   
+                    <button onClick={()=> {setCartProducts([])}}>Remover todos</button>
+                </div>
             </div>
-            <button onClick={()=> {setCartProducts([])}}>Remover todos</button>
-        </StyledCartModalList>
+        </ModalOverlay>
     )
 }

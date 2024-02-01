@@ -1,57 +1,47 @@
 import styled from "styled-components"
-import { GlobalStyle } from "../../Styles/globalStyle"
 
 export const StyledLi = styled.li`
-    border-radius: 5px;
-    background-color: var(--Color-white);
     display: flex;
-    height: 6.6rem;
-
-    div:nth-child(1){
-        background-color: var(--grey-100);
+    justify-content: space-between;
+    align-items: center;
+    .li__left{
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 1rem;
+    }
+    
+    .li__left--divImg{
         width: 5.1413rem;
         height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: .3125rem;
-        margin-right: .625rem;
+        background-color: var(--grey-100);
     }
+
     img{
         width: 3.4375rem;
         height: 3.3431rem;
     }
 
-    h3{
-        margin-bottom: .5rem;
-        margin-top: -5px;
-        width: 100px;
-    }
-
-    p{}
-
-    div:nth-child(3){
-        margin-top: 0rem;
+    .li__left--descripiton{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        span{
-            margin-top: .625rem;
-            margin-bottom: .625rem;
-        }
+        gap: .75rem;
+    }
+
+    .li__right{
+        display: flex;
+        gap: .75rem;
         button{
             background-color: transparent;
             color: var(--Color-primary);
             border: none;
         }
     }
-    :hover{
-    }
 
-    @media (min-width: 700px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    @media (min-width: 43.75rem) {
     }
 `

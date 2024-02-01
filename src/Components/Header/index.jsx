@@ -15,9 +15,9 @@ export const Header = ( { setInputSearch, cartProducts, allProducts, setCartProd
 
     return(
         <StyledHeader>
-            <div>
+            <div className='header__div'>
                 <img src={logo} alt="Logo do Burguer Kenzie (Burguer em cInza escuro e Kenzie em vermelho)" />
-                <div>
+                <div className='header__div--div'>
                     <button onClick={() => setIsOpen(true)}>
                         <img src={carrinho} alt="imagem de carrinho de compras" />
                     </button>

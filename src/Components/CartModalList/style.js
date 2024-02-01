@@ -2,64 +2,98 @@ import styled from "styled-components"
 import { GlobalStyle } from "../../Styles/globalStyle"
 
 export const StyledP = styled.p`
-    margin-left: 1.1819rem;
+    margin-left: 1rem;
 `
 
-export const StyledCartModalList = styled.section`
-    width: 93%;
+export const ModalOverlay = styled.div`
     position: fixed;
     display: flex;
-    flex-direction: column;
-    background-color: var(--Color-white);
-    border: 3px solid black;
-    border-radius: .5rem;
-
-    div:nth-child(1){
-        margin: 0;
-        margin-bottom: 20px;
-        padding: 0;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000040;
+    padding: .5rem;
+    
+    .modal{
+        border-radius: .5rem;
+        position: relative;
+        width: 100%;
+        height: 25.5rem;
+        max-width: 25rem;
+        background-color: var(--Color-white);
         display: flex;
-        padding: .8125rem 1.1819rem .8125rem 1.375rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .modal__header{
+        width: 100%;
         background-color: var(--Color-primary);
-        h2{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--Color-white);
-        }
+        color: var(--Color-white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 3.5625rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         button{
             background-color: transparent;
             border: none;
-            color: var(--grey-100);
+            color: var(--Color-white);
         }
     }
-    p:nth-child(3){
-        background-color:red;
-    }
-    ul{
+
+    .modal__items{
+        p{
+            width: 100%;
+            text-align: center;
+        }
         display: flex;
-        flex-direction: column;
-        margin-left: 1.25rem;
-        margin-right: 1.1819rem;
-        gap: 1.125rem;
+        align-items: center;
+        height: 50%;
+        max-height: 50%;
+        ul{
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-bottom: solid .125rem var(--grey-100);
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+        }
+        padding-right: 1rem;
     }
-    div:nth-child(3){
-        margin-top: .9375rem;
+    
+    .modal__total{
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        padding-left: 1.25rem;
-        padding-right: 1.4375rem;
-        p{}
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        p:nth-child(2){
+            color: var(--grey-300);
+        }
     }
-    button:nth-child(4){
-        margin: 1.25rem;
-        margin-right: 1.4375rem;
-        padding-top: 1.2813rem;
-        padding-bottom: 1.2813rem;
-        background-color: var(--grey-100);
-        color: var(--grey-300);
-        border-radius: .5rem;
-        border: none;
+
+    .modal__button{
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        margin-bottom: 1rem;
+        button{
+            width: 100%;
+            height: 3.75rem;
+            border-radius: .5rem;
+            background-color: #BDBDBD;
+            color: var(--Color-white);
+            border: none;
+        }
     }
 `
 

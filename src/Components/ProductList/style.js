@@ -14,6 +14,6 @@ export const StyledProductUl = styled.ul`
         padding-right: 7.375rem;
         flex-wrap: wrap;
         overflow-x: hidden;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 `
