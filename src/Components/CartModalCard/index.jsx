@@ -1,4 +1,5 @@
 import { StyledLi } from './style'
+import { Heading3 } from '../../Styles/typography'
 
 export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCartProducts, price} ) => {
     const addProduct = () => {
@@ -32,7 +33,7 @@ export const CartModalCard = ( {img, name, cartProducts, id, allProducts, setCar
                    <img src={img} alt='Imagem do produto em questão' />
                 </div>
                 <div className='li__left--descripiton'>
-                    <h3>{name}</h3>
+                    <Heading3>{name}</Heading3>
                     <p>{formatedPrice}</p>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { typography } from '../../Styles/typography' 
 
 export const StyledLi = styled.li`
     display: flex;
@@ -31,6 +31,11 @@ export const StyledLi = styled.li`
         display: flex;
         flex-direction: column;
         gap: .75rem;
+        p{
+            text-align: left;
+            font-weight: ${typography.body600.fontWeight};
+            font-size: ${typography.body600.fontSize};
+        }
     }
 
     .li__right{

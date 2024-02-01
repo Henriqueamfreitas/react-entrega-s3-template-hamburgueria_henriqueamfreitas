@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { typography } from '../../Styles/typography' 
 
 export const StyledP = styled.p`
     margin-left: 1rem;
@@ -37,6 +38,10 @@ export const ModalOverlay = styled.div`
         height: 3.5625rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        h2{
+            font-weight: ${typography.heading3.fontWeight};
+            font-size: ${typography.heading3.fontSize};
+        }
         button{
             background-color: transparent;
             border: none;
@@ -48,6 +53,8 @@ export const ModalOverlay = styled.div`
         p{
             width: 100%;
             text-align: center;
+            font-weight: ${typography.headline.fontWeight};
+            font-size: ${typography.headline.fontSize};
         }
         display: flex;
         align-items: center;
@@ -74,8 +81,14 @@ export const ModalOverlay = styled.div`
         padding-top: 1rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        p:nth-child(1){
+            font-weight: ${typography.body600.fontWeight};
+            font-size: ${typography.body600.fontSize};
+        }
         p:nth-child(2){
             color: var(--grey-300);
+            font-weight: ${typography.body.fontWeight};
+            font-size: ${typography.body.fontSize};
         }
     }
 
@@ -91,7 +104,9 @@ export const ModalOverlay = styled.div`
             border-radius: .5rem;
             background-color: #BDBDBD;
             color: var(--Color-white);
-            border: none;
+            border: none;            
+            font-weight: ${typography.headline.fontWeight};
+            font-size: ${typography.headline.fontSize};
         }
     }
 `

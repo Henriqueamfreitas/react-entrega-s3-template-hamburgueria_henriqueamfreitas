@@ -1,4 +1,5 @@
 import { StyledLi } from './style';
+import { Heading3 } from '../../Styles/typography';
 
 export const ProductCard = ( {img, name, category, price, id, allProducts, setCartProducts, cartProducts} ) => {
     const formatedPrice = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
@@ -26,14 +27,14 @@ export const ProductCard = ( {img, name, category, price, id, allProducts, setCa
     const filteredCartProducts = cartProducts.filter(product => product.id === id)
     return(
         <StyledLi>
-            <div>
+            <div className='product__divImg'>
                 <img src={img} alt='Imagem do produto em questão' />
             </div>
-            <div>
-                <h3>{name}</h3>
+            <div className='product__divDescripiton'>
+                <Heading3>{name}</Heading3>
                 <p>{category}</p>
                 <p>{formatedPrice}</p>
-                <div>
+                <div className='product__divDescripiton--buttons'>
                     <button onClick={removeProduct}>-</button>
                     <span>{filteredCartProducts.length}</span>
                     <button onClick={addProduct}>+</button>

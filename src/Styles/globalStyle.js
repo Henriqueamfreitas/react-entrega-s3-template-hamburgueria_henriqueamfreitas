@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { typography } from './typography';
 
 export const GlobalStyle = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -35,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		line-height: 1;
 		height: 100vh;
+		font-family: ${typography.fontFamily};
 	}
 	ol, ul {
 		list-style: none;

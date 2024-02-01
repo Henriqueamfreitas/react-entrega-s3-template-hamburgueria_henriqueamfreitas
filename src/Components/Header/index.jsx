@@ -1,5 +1,5 @@
 import carrinho from '../../Assets/carrinho.png'
-import logo from '../../Assets/Logo.png'
+import logo from '../../Assets/logo.png'
 import { StyledHeader } from './style'
 import { useState } from 'react'
 import { CartModalList } from '../CartModalList'
